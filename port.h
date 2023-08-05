@@ -6,7 +6,7 @@
 #include "Hal/uart.h"
 #include "Hal/timer.h"
 
-#define KP347_SEND_BYTE(data)               (void)(NULL)
+#define KP347_SEND_BYTE(data)				UART_send_byte(UART_4, data)
 #define KP347_IS_AVAILABLE()				UART_receive_available(UART_4)
 #define KP347_RECEIVE()                     UART_receive_data(UART_4)
 // Refer this function https://www.arduino.cc/reference/en/language/functions/communication/stream/streamread/
@@ -16,7 +16,7 @@
 #define KP347_STREAM_READ()                 UART_stream_read(UART_4)
 
 
-#define macro()             TIMER_get_tick_us()		// Get tick in us
+#define micros()             TIMER_get_tick_us()		// Get tick in us
 #define yield()             (void)(NULL)			// Do nothing
 
 
